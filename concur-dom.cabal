@@ -1,0 +1,124 @@
+name:                concur-dom
+version:             0.1.0.0
+synopsis:            A client side web UI framework for Haskell using real DOM node diffing.
+description:         A client side web UI framework for Haskell using real DOM node diffing.
+homepage:            https://github.com/demaledetti/concur-dom
+license:             BSD3
+license-file:        LICENSE
+author:              Stefano Debenedetti
+maintainer:          44903077+demaledetti@users.noreply.github.com
+copyright:           2024 (C) All Rights Reserved.
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+source-repository head
+  type:     git
+  location: https://github.com/demaledetti/concur-dom
+
+
+library
+  ghc-options:         -Wall -ferror-spans -Wunused-packages
+  default-language:    Haskell2010
+  hs-source-dirs:      src
+  -- for now we are using nanomorph but this could be replaced by any haskell
+  -- or javascript function that can diff real DOM nodes
+  js-sources:          js-src/nanomorph.js
+  exposed-modules:     Concur.DOM
+                     , Concur.DOM.Helper.Attribute
+                     , Concur.DOM.Helper.Element
+                     , Concur.DOM.Helper.Event
+                     , Concur.Subscription.Window
+                     , Concur.Subscription.Keyboard
+                     , Concur.Subscription.Mouse
+                     , Concur.Subscription.History
+  other-modules:       Concur.DOM.FFI
+                     , Concur.DOM.Run
+                     , Concur.DOM.Widgets
+  build-depends:       base >= 4.7 && < 5
+                     , concur-core
+                     , containers
+                     , free
+                     , ghcjs-base
+                     , ghcjs-dom
+                     , mtl
+                     , network-uri
+                     , stm
+                     , time
+
+
+--------------
+-- EXAMPLES --
+--------------
+
+executable hello
+  ghc-options:         -threaded -Wall -ferror-spans -Wunused-packages
+  hs-source-dirs:      examples
+  main-is:             Hello.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , concur-core
+                     , concur-dom
+
+executable counter
+  ghc-options:         -threaded -Wall -ferror-spans -Wunused-packages
+  hs-source-dirs:      examples
+  main-is:             Counter.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , concur-core
+                     , concur-dom
+                     , mtl
+
+executable clickCounter
+  ghc-options:         -threaded -Wall -ferror-spans -Wunused-packages
+  hs-source-dirs:      examples
+  main-is:             ClickCounter.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , concur-core
+                     , concur-dom
+                     , mtl
+
+executable mario
+  ghc-options:         -threaded -Wall -ferror-spans -Wunused-packages
+  hs-source-dirs:      examples
+  main-is:             Mario.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , concur-core
+                     , concur-dom
+                     , mtl
+                     , time
+
+executable kssu
+  ghc-options:         -threaded -Wall -ferror-spans -Wunused-packages
+  hs-source-dirs:      examples
+  main-is:             KirbySuperStarUltra.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , concur-core
+                     , concur-dom
+                     , containers
+                     , mtl
+
+executable hilo
+  ghc-options:         -threaded -Wall -ferror-spans -Wunused-packages
+  hs-source-dirs:      examples
+  main-is:             HiLo.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , concur-core
+                     , concur-dom
+                     , random
+
+executable todos
+  ghc-options:         -threaded -Wall -ferror-spans -Wunused-packages
+  hs-source-dirs:      examples
+  main-is:             Todos.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , concur-core
+                     , concur-dom
+                     , mtl

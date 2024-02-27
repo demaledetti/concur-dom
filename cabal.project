@@ -1,0 +1,45 @@
+packages: .
+
+-- For help getting a GHC with the JS backend:
+-- https://discourse.haskell.org/t/ann-ghcup-0-1-19-5-release-candidate-ghc-js-cross-support/6995
+-- Then adjust the following two variables to match your installation.
+with-compiler: javascript-unknown-ghcjs-ghc-9.8.1-js
+with-hc-pkg: javascript-unknown-ghcjs-ghc-pkg-9.8.1-js
+
+-- Work-in-progress port to the new GHC JS backend.
+source-repository-package
+  type: git
+  location: https://github.com/ghcjs/ghcjs-base
+  tag: a684c4ef9329d3ec509fa5ed4b7f4a4687e7ead6
+
+-- Work-in-progress port to the new GHC JS backend.
+source-repository-package
+  type: git
+  location: https://github.com/ghcjs/ghcjs-dom
+  tag: ae9bd8ffd15ffe6aad38420115cabe88255304c1
+  subdir: ghcjs-dom
+
+-- Work-in-progress port to the new GHC JS backend.
+source-repository-package
+  type: git
+  location: https://github.com/demaledetti/ghcjs-dom
+  tag: 7c196718a2db083fe5661a1f5a9577a2be1f36f6
+  subdir: ghcjs-dom-jsffi
+
+-- This is not the very last commit but one closer to the
+-- original concur-vdom sources. For other reasons why
+-- the latest Concur core might not be the best see also:
+-- https://github.com/pkamenarsky/concur-replica/issues/30#issuecomment-600342825
+source-repository-package
+  type: git
+  location: https://github.com/ajnsit/concur.git
+  tag: b1c0d90c2134d9bbd3e8d41bb389dec360e5a78e
+  subdir: concur-core
+
+-- This is JoshMeredith's patch to support GHC JS backend
+-- rebased on top of latest upstream to support GHC 9.8.1.
+-- Needed by the random package used by one of the examples.
+source-repository-package
+  type: git
+  location: https://github.com/demaledetti/splitmix
+  tag: 543284f79879fbcd162a569c48e876c46653625e
