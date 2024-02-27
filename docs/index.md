@@ -8,4 +8,4 @@
 * [mario](examples/mario.jsexe)
 * [todos](examples/todos.jsexe)
 
-[Examples source code]:(https://github.com/demaledetti/concur-dom/tree/main/examples)
+[Examples source code](https://github.com/demaledetti/concur-dom/tree/main/examples)
