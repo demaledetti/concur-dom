@@ -3,8 +3,8 @@ packages: .
 -- For help getting a GHC with the JS backend:
 -- https://discourse.haskell.org/t/ann-ghcup-0-1-19-5-release-candidate-ghc-js-cross-support/6995
 -- Then adjust the following two variables to match your installation.
-with-compiler: javascript-unknown-ghcjs-ghc-9.8.1-js
-with-hc-pkg: javascript-unknown-ghcjs-ghc-pkg-9.8.1-js
+with-compiler: javascript-unknown-ghcjs-ghc-9.8.2
+with-hc-pkg: javascript-unknown-ghcjs-ghc-pkg-9.8.2
 
 -- Work-in-progress port to the new GHC JS backend.
 source-repository-package
