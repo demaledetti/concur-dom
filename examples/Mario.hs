@@ -105,13 +105,8 @@ resizeWindow dims m = m { window = dims }
 drawMario :: Mario -> Widget HTML ()
 drawMario m@Mario{..} = el E.div [ A.height h, A.width w ]
   [ el E.img
-    [ A.height 37, A.width 37, A.src $ src ++ "?", A.style marioStyle ]
-    [],
-    el E.div
-    [ A.style "display: none" ]
-    [ text $ src ++ "XXX: workaround for a (GHC?) bug: we concatenate a dummy"
-      ++ " question mark above and this dummy text here because otherwise src"
-      ++ " gets truncated after the last /" ]
+    [ A.height 37, A.width 37, A.src src, A.style marioStyle ]
+    []
   ]
   where
     (w,h) = window

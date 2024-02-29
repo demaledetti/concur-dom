@@ -82,7 +82,8 @@ executable clickCounter
                      , mtl
 
 executable mario
-  ghc-options:         -threaded -Wall -ferror-spans -Wunused-packages
+  -- -O0 is a workaround for https://gitlab.haskell.org/ghc/ghc/-/issues/24495
+  ghc-options:         -threaded -Wall -ferror-spans -Wunused-packages -O0
   hs-source-dirs:      examples
   main-is:             Mario.hs
   default-language:    Haskell2010
