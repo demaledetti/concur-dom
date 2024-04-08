@@ -6,25 +6,7 @@ packages: .
 with-compiler: javascript-unknown-ghcjs-ghc-9.8.2
 with-hc-pkg: javascript-unknown-ghcjs-ghc-pkg-9.8.2
 
--- Work-in-progress port to the new GHC JS backend.
-source-repository-package
-  type: git
-  location: https://github.com/ghcjs/ghcjs-base
-  tag: a684c4ef9329d3ec509fa5ed4b7f4a4687e7ead6
-
--- Work-in-progress port to the new GHC JS backend.
-source-repository-package
-  type: git
-  location: https://github.com/ghcjs/ghcjs-dom
-  tag: ae9bd8ffd15ffe6aad38420115cabe88255304c1
-  subdir: ghcjs-dom
-
--- Work-in-progress port to the new GHC JS backend.
-source-repository-package
-  type: git
-  location: https://github.com/demaledetti/ghcjs-dom
-  tag: 7c196718a2db083fe5661a1f5a9577a2be1f36f6
-  subdir: ghcjs-dom-jsffi
+allow-newer: th-abstraction
 
 -- This is not the very last commit but one closer to the
 -- original concur-vdom sources. For other reasons why
